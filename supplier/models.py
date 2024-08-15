@@ -43,5 +43,8 @@ class Supplier(models.Model):
     total_clients = models.PositiveIntegerField("Total de clientes")
     average_rating = models.DecimalField('Avaliação média dos clientes', max_digits=3, decimal_places=2)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.name
