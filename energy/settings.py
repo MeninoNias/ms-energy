@@ -49,8 +49,10 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
 
+    'graphene_django',
+
+    'supplier',
     'core',
-    'supplier'
 ]
 
 MIDDLEWARE = [
@@ -167,6 +169,12 @@ SWAGGER_SETTINGS = {
     },
     'SHOW_REQUEST_HEADERS': True,
     'OPERATIONS_SORTER': 'alpha'
+}
+
+# GRAPHENE
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema',
+    'SCHEMA_OUTPUT': 'schema.json',
 }
 
 # Internationalization
