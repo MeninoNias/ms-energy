@@ -18,6 +18,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
 
 from rest_framework.permissions import BasePermission
 from rest_framework_simplejwt.views import (
@@ -26,6 +28,8 @@ from rest_framework_simplejwt.views import (
 )
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+
+from core.schema import schema
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -46,6 +50,7 @@ urlpatterns = [
     path('login/', TokenObtainPairView.as_view(), name='login'),
     path('refresh/', TokenRefreshView.as_view(), name='refresh'),
 
+    path('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)), name='graphql'),
 
     path('admin/', admin.site.urls),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

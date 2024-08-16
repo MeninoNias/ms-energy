@@ -22,9 +22,7 @@ class SupplierListV1(ListAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, ]
     serializer_class = SupplierSerializer
-    filter_backends = [filters.OrderingFilter,
-                       filters.SearchFilter,
-                       DjangoFilterBackend]
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend]
     filterset_class = SupplierFilter
     ordering_fields = ['name', 'created_at', 'cost_per_kwh', 'minimum_kwh_limit']
     search_fields = ['name']
