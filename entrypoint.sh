@@ -4,7 +4,7 @@
 python manage.py migrate
 
 # Cria o superusuário se ele não existir
-python manage.py create_superuser_if_not_exist
+python manage.py create_superuser
 
 # Inicia a aplicação
 gunicorn --bind 0.0.0.0:8000 energy.wsgi
