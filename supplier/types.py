@@ -17,4 +17,4 @@ class SupplierType(DjangoObjectType):
     def resolve_logo(self, info):
         if self.logo:
             return settings.APP_URL + settings.MEDIA_URL + str(self.logo)
-        return None
+        return 'https://placehold.co/100x100'
