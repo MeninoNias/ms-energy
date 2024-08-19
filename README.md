@@ -4,6 +4,15 @@
 
 Este projeto é um sistema de gerenciamento de fornecedores de energia que permite aos usuários informar seu consumo mensal de energia e escolher o fornecedor mais adequado. O backend é construído com Django e o frontend com React. O sistema utiliza GraphQL para consultas e integrações com o banco de dados PostgreSQL.
 
+## Acceso ao sistema
+
+[Energy Backend](https://18.212.133.34/admin/)
+
+Username:
+- admin
+Senha:
+- admin123
+
 ## Requisitos
 
 - Python 3.11 ou superior
